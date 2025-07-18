@@ -1,0 +1,152 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPKc7SfyeBsbSAp1YtfxCzB",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/arfymdrgretric%20notation\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TPPX331SCglo",
+        "outputId": "1de95b49-52c2-48a5-bb47-12ddd38b6228"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "1\n"
+          ]
+        }
+      ],
+      "source": [
+        "iteration = 0\n",
+        "def Ontime(num):\n",
+        "  iteration =+1\n",
+        "  print(str(iteration))\n",
+        "Ontime(10)\n",
+        "Ontime(20)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "def Ontime(num):\n",
+        "  iteration = 0\n",
+        "  for i in range(1,num+1):\n",
+        "    iteration += 1\n",
+        "  print(str(iteration))\n",
+        "Ontime(10)\n",
+        "Ontime(20)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SQ3an3iBC9K3",
+        "outputId": "463ca341-ecc4-408a-ccc9-23e243601740"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "20\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Ontime(num):\n",
+        "  iteration = 0\n",
+        "  for i in range(0,num):\n",
+        "    for i in range(0,num):\n",
+        "      iteration += 1\n",
+        "  print(str(iteration))\n",
+        "Ontime(10)\n",
+        "Ontime(20)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "T-L-PZ3KDt7O",
+        "outputId": "2eca8862-07b1-432b-b6ad-9764d91fcd98"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "100\n",
+            "400\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Ontime(num):\n",
+        "  iteration = 1\n",
+        "  for i in range(0,num):\n",
+        "    for i in range(0,num):\n",
+        "      iteration *= num\n",
+        "  print(iteration)\n",
+        "Ontime(10)\n",
+        "Ontime(20)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JhqLMfXzEC1j",
+        "outputId": "f434b56d-0432-40c1-d68c-dc6a3ec2244c"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n",
+            "25822498780869085896559191720030118743297057928292235128306593565406476220168411946296453532801378314359031719727474933760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
