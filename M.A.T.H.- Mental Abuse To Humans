@@ -1,0 +1,163 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPCc63Uai3Nhzvg04ALfeQb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/M.A.T.H.-%20Mental%20Abuse%20To%20Humans\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ajf6d9ssD4dG",
+        "outputId": "5455e184-f3d4-4598-8e1a-f93ea2b3f413"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 578163293671213678\n",
+            "Not Palindrome\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = str(int(input(\"Enter a number: \")))\n",
+        "b = \"\"\n",
+        "for i in range(len(a)):\n",
+        "  b = b+a[len(a)-i-1]\n",
+        "if b == a:\n",
+        "  print(\"Palindrome\")\n",
+        "else:\n",
+        "  print(\"Not Palindrome\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = int(input(\"Enter a number: \"))\n",
+        "b = int(input(\"Enter a number: \"))\n",
+        "if a<b:\n",
+        "  while a:\n",
+        "    ns = a\n",
+        "    a = b%a\n",
+        "    b = ns\n",
+        "  print(b)\n",
+        "else:\n",
+        "  while b:\n",
+        "    ns = b\n",
+        "    b = a%b\n",
+        "    a = ns\n",
+        "  print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nARs91T3FB_o",
+        "outputId": "85a2d6a7-fb59-45da-95b9-155d1e459495"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 77\n",
+            "Enter a number: 14\n",
+            "7\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = int(input(\"Enter a number: \"))\n",
+        "b = int(input(\"Enter a number: \"))\n",
+        "mul = a*b\n",
+        "if a<b:\n",
+        "  while a:\n",
+        "    ns = a\n",
+        "    a = b%a\n",
+        "    b = ns\n",
+        "  print(mul/b)\n",
+        "else:\n",
+        "  while b:\n",
+        "    ns = b\n",
+        "    b = a%b\n",
+        "    a = ns\n",
+        "  print(mul/a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EDprb0MKFh-C",
+        "outputId": "3c43f4b3-a373-4925-ae10-4bd71647a2a5"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 30\n",
+            "Enter a number: 84\n",
+            "420.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(int(input(\"Enter the base: \"))**int(input(\"Enter the power: \")))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ry29NP4fIxcL",
+        "outputId": "ca7d723c-3a19-4613-af05-f58006aec8f0"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the base: 3\n",
+            "Enter the power: 3\n",
+            "27\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
