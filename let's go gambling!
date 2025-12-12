@@ -1,0 +1,65 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO3zCkUw0QrTtBYWwzyThfv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/let's%20go%20gambling!\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 24,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "r_aXk1VtHTty",
+        "outputId": "a55adcb0-9583-4d47-ffbb-b759a83b41c9"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your guess 1-100: 57\n",
+            "YOU LOSE!\n",
+            "The number was:  32\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "a = int(input(\"Enter your guess 1-100: \"))\n",
+        "l = []\n",
+        "for i in range(100):\n",
+        "  l.append(i)\n",
+        "x = random.choice(l)\n",
+        "if random.choice(l) == a:\n",
+        "  print('YOU WIN!')\n",
+        "else:\n",
+        "  print('YOU LOSE!')\n",
+        "  print('The number was: ', x)"
+      ]
+    }
+  ]
+}
