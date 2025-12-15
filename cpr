@@ -1,0 +1,125 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPhQGNMNvI6jmDTfG8OgLM+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/cpr\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R6pVRxNFPcXV",
+        "outputId": "1d9c393c-cacd-4852-ee3b-5de545289783"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['E', 'A', 'D', 'V', 'Z', 'X', 'C', 'B', 'Y']\n"
+          ]
+        }
+      ],
+      "source": [
+        "set1 = {'A','B','C','D','E'}\n",
+        "set2 = ('B','D','V','X','Y','Z')\n",
+        "union = set1.union(set2)\n",
+        "total_guests = list(union)\n",
+        "print(total_guests)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "set1 = {'A','B','C','D','E'}\n",
+        "set2 = ('B','D','V','X','Y','Z')\n",
+        "union = set1.intersection(set2)\n",
+        "total_guests = list(union)\n",
+        "print(total_guests)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vLaIklNOQa8N",
+        "outputId": "96fbd15d-9dc3-4e31-d7ce-580a68102337"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['B', 'D']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "ussDQywFQge2"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def prob_a_or_b(a,b,all_possible_outcomes):\n",
+        "  proba = len(a)/len(all_possible_outcomes)\n",
+        "  prob_b = len(b)/len(all_possible_outcomes)\n",
+        "  inter = a.intersection(b)\n",
+        "  prob_inter = len(inter)/len(all_possible_outcomes)\n",
+        "  return(proba+prob_b - prob_inter)\n",
+        "evens = {2,4,6}\n",
+        "gt2 = {3,4,5,6}\n",
+        "apr = (1,2,3,4,5,6)\n",
+        "print(prob_a_or_b(evens,gt2,apr))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aL8goH5DQyQF",
+        "outputId": "b9576fc1-625b-488a-8961-17528361f5d6"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.8333333333333333\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
