@@ -1,0 +1,104 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO/QTWjHLstyRQC1nG5nDsA",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/on%20one%20condition%20I%20will%20have%20probability\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_4qyv5qpKuSV",
+        "outputId": "9f01171d-0ca1-4009-83ee-7fe4f0c1e0f7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of orange balls: 12\n",
+            "Enter the number of blue balls:23\n",
+            "Probability of getting 1st orange and 2nd blue ball:\n",
+            "0.232\n"
+          ]
+        }
+      ],
+      "source": [
+        "def probability(a,b,total):\n",
+        "  prob_a = orange/total\n",
+        "  prob_bga = blue/(total-1)\n",
+        "  probAandB = prob_a * prob_bga\n",
+        "  return round(probAandB,3)\n",
+        "orange = int(input('Enter the number of orange balls: '))\n",
+        "blue = int(input('Enter the number of blue balls:'))\n",
+        "total = orange+blue\n",
+        "\n",
+        "print('Probability of getting 1st orange and 2nd blue ball:')\n",
+        "print(probability(orange,blue,total))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rs = int(input('Enter the number of red shirts: '))\n",
+        "bs = int(input('Enter the number of blue shirts: '))\n",
+        "ws = int(input('Enter the number of white shirts: '))\n",
+        "total = rs+bs+ws\n",
+        "prob_a = bs/total\n",
+        "prob_b = rs/total\n",
+        "\n",
+        "prob_bga = prob_b\n",
+        "prob_a_and_b = prob_a*prob_b\n",
+        "\n",
+        "print(round((prob_bga),3))\n",
+        "print(round((prob_a_and_b),3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mBSaBtRvLz4G",
+        "outputId": "3a06de94-9c98-4238-c7d5-2772ba34ac33"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of red shirts: 5\n",
+            "Enter the number of blue shirts: 5\n",
+            "Enter the number of white shirts: 5\n",
+            "0.333\n",
+            "0.111\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
