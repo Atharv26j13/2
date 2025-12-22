@@ -1,0 +1,66 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOyHhfrwyIpgeq0rKVn3B2q",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/projectt\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GDD7nET7gvWg",
+        "outputId": "b2f24079-dc1b-493e-e2e3-5c63a72b3a4f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of White balls: 5\n",
+            "Enter the number of blue balls:5\n",
+            "Probability of getting 1st white and 2nd white ball:\n",
+            "0.278\n"
+          ]
+        }
+      ],
+      "source": [
+        "def probability(a,b,total):\n",
+        "  prob_a = orange/total\n",
+        "  prob_bga = blue/(total-1)\n",
+        "  probAandB = prob_a * prob_bga\n",
+        "  return round(probAandB,3)\n",
+        "orange = int(input('Enter the number of White balls: '))\n",
+        "blue = int(input('Enter the number of blue balls:'))\n",
+        "total = orange+blue\n",
+        "\n",
+        "print('Probability of getting 1st white and 2nd white ball:')\n",
+        "print(probability(orange,blue,total))"
+      ]
+    }
+  ]
+}
