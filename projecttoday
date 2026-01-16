@@ -1,0 +1,79 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPey6bLeamUUZUKZlNGsM2M",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/projecttoday\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yYEVUBN0uBLM",
+        "outputId": "11098189-5318-4290-fa8b-21765b04d830"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter no.of sides for dice: 5\n",
+            "Enter no.of rolls: 5\n",
+            "[3 1 4 1 3]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np;die_sides = int(input('Enter no.of sides for dice: '));die = range(1,die_sides);num_rolls = int(input('Enter no.of rolls: '));results = np.random.choice(die,size = num_rolls,replace=True);print(results);"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import scipy.stats as stats;x = 3;n = 10;prob_1 = stats.binom.cdf(x,n,p=0.5);print(prob_1);prob_2 = 1-stats.binom.pmf(0,n=10,p=.5)-stats.binom.pmf(1,n=10,p=.5)-stats.binom.pmf(2,n=10,p=.5);print(prob_2);"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ofgMs2_ovYZW",
+        "outputId": "4f2d4b1b-3c1f-4e5b-a7f2-f68509840dc7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.171875\n",
+            "0.9453125\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
