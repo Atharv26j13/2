@@ -1,0 +1,133 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM4JUmQ+FVO7MYPkmPjBUEm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/WORKINPROGRESS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "-NcARs0NnkAS"
+      },
+      "outputs": [],
+      "source": [
+        "#Import"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random"
+      ],
+      "metadata": {
+        "id": "16tJRco2nsTD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Lists"
+      ],
+      "metadata": {
+        "id": "ow0umIRInsbH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "HUMAN = ['HUMAN', 'HOMO-SAPIAN', 'PERSON', 'HOMO-APE']\n",
+        "BRAIN = ['BRAIN', 'CEREBRUM', 'ENCELEPHALON']\n",
+        "BOTTLE = ['BOTTLE', 'FLASK', 'CARAFE', 'CONTAINER']\n",
+        "CHIPS = ['CHIP', 'FRAGMENT', 'PEICE', 'BIT']\n",
+        "GLASSES = ['GLASSES', 'SPECTACLES', 'EYEGLASSES', 'SPECS']\n",
+        "PHONE = ['PHONE', 'TELEPHONE', 'MOBILE']\n",
+        "TOTAL = [HUMAN, BRAIN, BOTTLE, CHIPS, GLASSES, PHONE]"
+      ],
+      "metadata": {
+        "id": "v1Z6Af7wnsrR"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Process"
+      ],
+      "metadata": {
+        "id": "etuMRqNWns8u"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import re\n",
+        "\n",
+        "Word = input(\"Enter a word and you will get its synonyms:\\n\")\n",
+        "Word = Word.upper()\n",
+        "\n",
+        "Word = re.sub(r'[^A-Z]', '', Word)\n",
+        "print('Did you mean: ',Word)\n",
+        "if Word in HUMAN:\n",
+        "  print(HUMAN)\n",
+        "elif Word in BRAIN:\n",
+        "  print(BRAIN)\n",
+        "elif Word in BOTTLE:\n",
+        "  print(BOTTLE)\n",
+        "elif Word in CHIPS:\n",
+        "  print(CHIPS)\n",
+        "elif Word in GLASSES:\n",
+        "  print(GLASSES)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1JzwAVCdntBp",
+        "outputId": "13b2fdba-2dd2-4683-f8ba-b79fee23f81c"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a word and you will get its synonyms:\n",
+            "Hum(an\n",
+            "Did you mean:  HUMAN\n",
+            "['HUMAN', 'HOMO-SAPIAN', 'PERSON', 'HOMO-APE']\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
