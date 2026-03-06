@@ -1,0 +1,280 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMnb5U9wxNFRBFs0Sng5/fg",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/YAAY\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "-NcARs0NnkAS"
+      },
+      "outputs": [],
+      "source": [
+        "#Import"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random"
+      ],
+      "metadata": {
+        "id": "16tJRco2nsTD"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Lists"
+      ],
+      "metadata": {
+        "id": "ow0umIRInsbH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "HUMAN = ['HUMAN', 'HOMO-SAPIAN', 'PERSON', 'HOMO-APE']\n",
+        "BRAIN = ['BRAIN', 'CEREBRUM', 'ENCELEPHALON']\n",
+        "BOTTLE = ['BOTTLE', 'FLASK', 'CARAFE', 'CONTAINER']\n",
+        "CHIPS = ['CHIP', 'FRAGMENT', 'PEICE', 'BIT']\n",
+        "GLASSES = ['GLASSES', 'SPECTACLES', 'EYEGLASSES', 'SPECS']\n",
+        "PHONE = ['PHONE', 'TELEPHONE', 'MOBILE']\n",
+        "TOTAL = [HUMAN, BRAIN, BOTTLE, CHIPS, GLASSES, PHONE]"
+      ],
+      "metadata": {
+        "id": "v1Z6Af7wnsrR"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Process"
+      ],
+      "metadata": {
+        "id": "etuMRqNWns8u"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import re\n",
+        "\n",
+        "Word = input(\"Enter a word and you will get its synonyms:\\n\")\n",
+        "Word = Word.upper()\n",
+        "l = []\n",
+        "h = 0\n",
+        "br = 0\n",
+        "b = 0\n",
+        "c = 0\n",
+        "g = 0\n",
+        "p = 0\n",
+        "Word = re.sub(r'[^A-Z]', '', Word)\n",
+        "if Word in HUMAN:\n",
+        "  print(HUMAN)\n",
+        "elif Word in BRAIN:\n",
+        "  print(BRAIN)\n",
+        "elif Word in BOTTLE:\n",
+        "  print(BOTTLE)\n",
+        "elif Word in CHIPS:\n",
+        "  print(CHIPS)\n",
+        "elif Word in GLASSES:\n",
+        "  print(GLASSES)\n",
+        "else:\n",
+        "\n",
+        "  for i in Word:\n",
+        "    l.append(i)\n",
+        "  for i in l:\n",
+        "    if i in HUMAN[0]:\n",
+        "      h +=1\n",
+        "    elif i in HUMAN[1]:\n",
+        "      h +=1\n",
+        "    elif i in HUMAN[2]:\n",
+        "      h +=1\n",
+        "    elif i in HUMAN[3]:\n",
+        "      h +=1\n",
+        "    if i in BRAIN[0]:\n",
+        "      br +=1\n",
+        "    elif i in BRAIN[1]:\n",
+        "      br +=1\n",
+        "    elif i in BRAIN[2]:\n",
+        "      br +=1\n",
+        "    if i in BOTTLE[0]:\n",
+        "      b +=1\n",
+        "    elif i in BOTTLE[1]:\n",
+        "      b +=1\n",
+        "    elif i in BOTTLE[2]:\n",
+        "      b +=1\n",
+        "    elif i in BOTTLE[3]:\n",
+        "      b +=1\n",
+        "    if i in CHIPS[0]:\n",
+        "      c +=1\n",
+        "    elif i in CHIPS[1]:\n",
+        "      c +=1\n",
+        "    elif i in CHIPS[2]:\n",
+        "      c +=1\n",
+        "    elif i in CHIPS[3]:\n",
+        "      c +=1\n",
+        "    if i in GLASSES[0]:\n",
+        "      g +=1\n",
+        "    elif i in GLASSES[1]:\n",
+        "      g +=1\n",
+        "    elif i in GLASSES[2]:\n",
+        "      g +=1\n",
+        "    elif i in GLASSES[3]:\n",
+        "      g +=1\n",
+        "    if i in PHONE[0]:\n",
+        "      p +=1\n",
+        "    elif i in PHONE[1]:\n",
+        "      p +=1\n",
+        "    elif i in PHONE[2]:\n",
+        "      p +=1\n",
+        "\n",
+        "  if h>=br and h>=b and h>=c and h>=g and h>=p:\n",
+        "    if h==br or h==b or h==c or h==g or h==p:\n",
+        "      if h==br:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',BRAIN)\n",
+        "      if h==b:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if h==c:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',CHIPS)\n",
+        "      if h==g:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',GLASSES)\n",
+        "      if h==p:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(HUMAN)\n",
+        "  elif br>=h and br>=b and br>=c and br>=g and br>=p:\n",
+        "    if h==br or br==b or br==c or br==g or br==p:\n",
+        "      if h==br:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',BRAIN)\n",
+        "      if br==b:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if br==c:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',CHIPS)\n",
+        "      if br==g:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',GLASSES)\n",
+        "      if br==p:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(BRAIN)\n",
+        "  elif b>=h and b>=br and b>=c and b>=g and b>=p:\n",
+        "    if h==b or br==b or b==c or b==g or b==p:\n",
+        "      if h==br:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if h==b:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if h==c:\n",
+        "        print(BOTTLE,'\\n or did you mean\\n',CHIPS)\n",
+        "      if h==g:\n",
+        "        print(BOTTLE,'\\n or did you mean\\n',GLASSES)\n",
+        "      if h==p:\n",
+        "        print(BOTTLE,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(BOTTLE)\n",
+        "  elif c>=h and c>=b and c>=br and c>=g and c>=p:\n",
+        "    if h==br or br==b or br==c or br==g or br==p:\n",
+        "      if h==br:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',CHIPS)\n",
+        "      if h==b:\n",
+        "        print(CHIPS,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if h==c:\n",
+        "        print(BRAIN,'\\n or did you mean\\n',CHIPS)\n",
+        "      if h==g:\n",
+        "        print(CHIPS,'\\n or did you mean\\n',GLASSES)\n",
+        "      if h==p:\n",
+        "        print(CHIPS,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(CHIPS)\n",
+        "  elif g>=h and g>=b and g>=c and g>=br and g>=p:\n",
+        "    if g==br or g==b or g==c or h==g or g==p:\n",
+        "      if g==br:\n",
+        "        print(GLASSES,'\\n or did you mean\\n',BRAIN)\n",
+        "      if g==b:\n",
+        "        print(GLASSES,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if g==c:\n",
+        "        print(GLASSES,'\\n or did you mean\\n',CHIPS)\n",
+        "      if h==g:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',GLASSES)\n",
+        "      if g==p:\n",
+        "        print(GLASSES,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(GLASSES)\n",
+        "  elif p>=h and p>=b and p>=c and p>=g and p>=br:\n",
+        "    if p==br or p==b or p==c or p==g or h==p:\n",
+        "      if p==br:\n",
+        "        print(PHONE,'\\n or did you mean\\n',BRAIN)\n",
+        "      if p==b:\n",
+        "        print(PHONE,'\\n or did you mean\\n',BOTTLE)\n",
+        "      if p==c:\n",
+        "        print(PHONE,'\\n or did you mean\\n',CHIPS)\n",
+        "      if p==g:\n",
+        "        print(PHONE,'\\n or did you mean\\n',GLASSES)\n",
+        "      if h==p:\n",
+        "        print(HUMAN,'\\n or did you mean\\n',PHONE)\n",
+        "    else:\n",
+        "      print(PHONE)\n",
+        "\n",
+        "\n",
+        "print(h,br,b,g,p)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1JzwAVCdntBp",
+        "outputId": "738a4fdc-16bc-4a1a-81dd-464e87be6062"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a word and you will get its synonyms:\n",
+            "braii9n\n",
+            "['BRAIN', 'CEREBRUM', 'ENCELEPHALON'] \n",
+            " or did you mean\n",
+            " ['BOTTLE', 'FLASK', 'CARAFE', 'CONTAINER']\n",
+            "['BRAIN', 'CEREBRUM', 'ENCELEPHALON'] \n",
+            " or did you mean\n",
+            " ['CHIP', 'FRAGMENT', 'PEICE', 'BIT']\n",
+            "5 6 6 1 4\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
