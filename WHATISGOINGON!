@@ -1,0 +1,78 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOg7CZeM6P3sKtgShBSbD1o",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/WHATISGOINGON!\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 27,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qBL7mib62d8C",
+        "outputId": "0637c13a-31eb-44ef-89c0-0b3787aa489c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter list size100\n",
+            "[45, 46, 30680346300794274230660433647640397899788170645078853280082659754365153181696, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0, 1.0, 2.0, 1.0, 2.0, 4.0, 1.0]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "Data = []\n",
+        "a = int(input(\"Enter list size\"))\n",
+        "x = 1\n",
+        "for i in range(a):\n",
+        "  if len(Data) == 0:\n",
+        "    Data.append(np.random.randint(1,100))\n",
+        "  else:\n",
+        "    if i%3 == 0:\n",
+        "      Data.append(Data[-1]*Data[-1]**-1)\n",
+        "    elif i%2 == 0:\n",
+        "      Data.append(Data[-1]**Data[-1])\n",
+        "    else:\n",
+        "      Data.append(Data[-1]+1)\n",
+        "print(Data)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Q_Jnt3uw6Slw"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
