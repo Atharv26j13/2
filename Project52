@@ -1,0 +1,43 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOaS2BM1M6QozDk/Rd+R91e",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/Project52\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Artficial intelligence applications:\n",
+        "\n",
+        "1.  Alexa/Siri: Smart voice assistants such as Alexa and Siri can assist the user with small tasks and makes them more convenient\n",
+        "\n",
+        "2.  Neo: Neo is an autonomus robot maid that can finish simple chores with no effort making them convenient"
+      ],
+      "metadata": {
+        "id": "Nfi4-4p-PfLv"
+      }
+    }
+  ]
+}
