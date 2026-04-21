@@ -1,0 +1,45 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMnu/jdmYO9sVPcmKfI80IJ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/Project\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Convolutional neural networks are a specialised deep learning model allowing the machine to mimic the visual cortex of a human and recognise and classify between different objects, animals, etc.\n",
+        "\n",
+        "**Applications:**\n",
+        "\n",
+        "1.  Species recogniser: This machine can differentiate between different species using a picture of it. These can help with scientific studies.\n",
+        "\n",
+        "2.  Navigation system from blind people: This machine can be a camera on a walking stick that recognises what objects or obstacles are there ahead and warns the blind person in advance."
+      ],
+      "metadata": {
+        "id": "RtJfniLmNaUJ"
+      }
+    }
+  ]
+}
