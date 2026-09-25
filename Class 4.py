@@ -1,211 +1,55 @@
-import random
+import cv2
 
-grid = [1,2,3,4,5,6,7,8,9]
+face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+)
 
-def showboard():
+cap = cv2.VideoCapture(0)
 
-    RED = "\033[91m"
-    BLUE = "\033[94m"
-    RESET = "\033[0m"
+if not cap.isOpened():
+    print("Error: Could not open webcam.")
+    exit()
 
-    def color(value):
+while True:
+    ret, frame = cap.read()
 
-        if value == "X":
-            return RED + "X" + RESET
+    if not ret:
+        print("Error: Failed to capture Image")
+        break
 
-        if value == "O":
-            return BLUE + "O" + RESET
+    avg_channels = cv2.mean(frame)
 
-        return str(value)
+    # Extract BGR values and convert to integers
+    avg_bgr = [int(x) for x in avg_channels[:3]]
 
-    print("")
+    avg = 0
 
-    print(f" {color(grid[0])} | {color(grid[1])} | {color(grid[2])}")
-    print("---+---+---")
-    print(f" {color(grid[3])} | {color(grid[4])} | {color(grid[5])}")
-    print("---+---+---")
-    print(f" {color(grid[6])} | {color(grid[7])} | {color(grid[8])}")
+    binc = 135-avg_bgr[0]
+    ginc = 135-avg_bgr[1]
+    rinc = 135-avg_bgr[2]
 
-    print("")
+    b, g, r = cv2.split(frame)
 
-def checkwinner(board):
+    b_tinted = cv2.add(b, binc)
+    g_tinted = cv2.add(g, ginc)
+    r_tinted = cv2.add(r, rinc)
 
-    winning_combinations = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6]
-    ]
+    frame = cv2.merge((b_tinted, g_tinted, r_tinted))
 
-    for combo in winning_combinations:
+    for i in avg_bgr:
+        avg += i * (1 / 3)
 
-        a, b, c = combo
+    avg = int(avg)
 
-        if board[a] == board[b] == board[c]:
-            if board[a] == "X":
-                return "X"
+    print(avg)
 
-            if board[a] == "O":
-                return "O"
+    inc = 135-avg
+    bright_image = cv2.convertScaleAbs(frame, alpha=1.0+(inc/100), beta=inc*0.7) 
 
-    if all(space in ["X", "O"] for space in board):
-        return "Draw"
+    cv2.imshow('Camera', bright_image)
 
-    return None
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-
-def moveplayer():
-
-    while True:
-
-        try:
-            move = int(input("Enter your move (1-9): ")) - 1
-
-            if move < 0 or move > 8:
-                print("Please enter a number from 1 to 9.")
-                continue
-
-            if grid[move] in ["X", "O"]:
-                print("That square is already taken!")
-                continue
-
-            grid[move] = "X"
-            break
-
-        except ValueError:
-            print("Please enter a number.")
-
-
-def minimax(board, maximizing):
-
-    result = checkwinner(board)
-
-    # AI wins
-    if result == "O":
-        return 1
-
-    # Player wins
-    if result == "X":
-        return -1
-
-    # Draw
-    if result == "Draw":
-        return 0
-
-    empty = []
-
-    for i in range(9):
-
-        if board[i] not in ["X", "O"]:
-            empty.append(i)
-
-    if maximizing:
-
-        best_score = -100
-
-        for move in empty:
-
-            old = board[move]
-
-            board[move] = "O"
-
-            score = minimax(board, False)
-
-            board[move] = old
-
-            best_score = max(best_score, score)
-
-        return best_score
-
-    else:
-
-        best_score = 100
-
-        for move in empty:
-
-            old = board[move]
-
-            board[move] = "X"
-
-            score = minimax(board, True)
-
-            board[move] = old
-
-            best_score = min(best_score, score)
-
-        return best_score
-
-
-def moveai():
-
-    best_score = -100
-    best_move = None
-
-    for i in range(9):
-
-        if grid[i] not in ["X", "O"]:
-
-            old = grid[i]
-
-            grid[i] = "O"
-
-            score = minimax(grid, False)
-
-            grid[i] = old
-
-            if score > best_score:
-
-                best_score = score
-                best_move = i
-
-    grid[best_move] = "O"
-
-
-def game():
-
-    print("TIC TAC TOE")
-    print("You are X")
-    print("AI is O")
-
-    showboard()
-
-    while True:
-
-        # Player's turn
-        moveplayer()
-
-        showboard()
-
-        result = checkwinner(grid)
-
-        if result == "X":
-            print("You win!")
-            break
-
-        if result == "Draw":
-            print("It's a draw!")
-            break
-
-        # AI's turn
-        print("AI is thinking...")
-
-        moveai()
-
-        showboard()
-
-        result = checkwinner(grid)
-
-        if result == "O":
-            print("AI wins!")
-            break
-
-        if result == "Draw":
-            print("It's a draw!")
-            break
-
-
-game()
+cap.release()
+cv2.destroyAllWindows()
