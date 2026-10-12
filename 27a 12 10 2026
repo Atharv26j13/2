@@ -1,0 +1,129 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNDzfzaA27dKfsvObwMyrgm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Atharv26j13/2/blob/main/27a%2012%2010%202026\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3tucwH-QmQht",
+        "outputId": "2841b09c-ae66-4977-848d-7292fa66d3aa"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "RANDOM CRINGE AND CLICHE JOKES BECAUSE WHY NOT!\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Did you hear the one about the guy with the broken hearing aid? - Neither did he.\n",
+            "Roses are red, violets are blue\n",
+            "After reading this joke, I feel sorry for you.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "What do you call a suspicious looking laptop? - Asus\n",
+            "Roses are red, violets are blue\n",
+            "Here's what I say to this joke, AAAAAATHOOOOOOO!\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Knock knock. \n",
+            " Who's there? \n",
+            " Hatch. \n",
+            " Hatch who? - Bless you!\n",
+            "This joke is so bad, it has a book\n",
+            "Chapter 1, this joke is cooked\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Where did the API go to eat? - To the RESTaurant.\n",
+            "This joke is boring, even for nerds\n",
+            "To try and roast it, the dictionary had to add new words.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "A user interface is like a joke. - If you have to explain it then it is not that good.\n",
+            "This joke is boring, even for nerds\n",
+            "To try and roast it, the dictionary had to add new words.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Why do scuba divers fall backwards into the water? - Because if they fell forwards they’d still be in the boat.\n",
+            "This joke is boring, even for nerds\n",
+            "To try and roast it, the dictionary had to add new words.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "What creature is smarter than a talking parrot? - A spelling bee.\n",
+            "This joke is so old, I've already heard it\n",
+            "But because its trash, the government won't allow me to burn it.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Did you hear about the two silk worms in a race? - It ended in a tie.\n",
+            "Roses are red, violets are blue\n",
+            "Here's what I say to this joke, AAAAAATHOOOOOOO!\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "What lies at the bottom of the ocean and twitches? - A nervous wreck.\n",
+            "This joke is boring, even for nerds\n",
+            "To try and roast it, the dictionary had to add new words.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Why don't scientists trust atoms? - Because they make up everything.\n",
+            "This joke is so cheap, its worth just a dime\n",
+            "Bye bye, see you, sorry for wasting your time.\n",
+            "Press enter for a new joke, or type 'q'/'exit' to quit: \n",
+            "Why did the scarecrow win an award? - Because he was outstanding in his field.\n",
+            "Twinkle Twinkle, little star!\n",
+            "I'll hit this joke with a metal bar!\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "import requests\n",
+        "\n",
+        "roasts = [\"Roses are red, violets are blue\\nHere's what I say to this joke, AAAAAATHOOOOOOO!\",\"This joke is so old, I've already heard it\\nBut because its trash, the government won't allow me to burn it.\",\"This joke is so cheap, its worth just a dime\\nBye bye, see you, sorry for wasting your time.\",\"This joke is so bad, it has a book\\nChapter 1, this joke is cooked\",\"This joke is boring, even for nerds\\nTo try and roast it, the dictionary had to add new words.\",\"Roses are red, violets are blue\\nAfter reading this joke, I feel sorry for you.\",\"Twinkle Twinkle, little star!\\nI'll hit this joke with a metal bar!\"]\n",
+        "\n",
+        "def get_random_joke():\n",
+        "  url = \"https://official-joke-api.appspot.com/random_joke\"\n",
+        "  response = requests.get(url)\n",
+        "\n",
+        "  if response.status_code == 200:\n",
+        "    joke_data = response.json()\n",
+        "    return f\"{joke_data['setup']} - {joke_data['punchline']}\"\n",
+        "  else:\n",
+        "    return \"Failed to fetch a joke.\"\n",
+        "\n",
+        "def main():\n",
+        "  print(\"RANDOM CRINGE AND CLICHE JOKES BECAUSE WHY NOT!\")\n",
+        "\n",
+        "  while True:\n",
+        "    user_input = input(\"Press enter for a new joke, or type 'q'/'exit' to quit: \").strip().lower()\n",
+        "\n",
+        "    if user_input in ('q', 'exit'):\n",
+        "      break\n",
+        "\n",
+        "    joke = get_random_joke()\n",
+        "    print(joke)\n",
+        "    print(roasts[random.randint(0,6)])\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "  main()"
+      ]
+    }
+  ]
+}
