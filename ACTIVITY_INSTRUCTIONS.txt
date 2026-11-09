@@ -1,0 +1,50 @@
+CLONE ME (AI Expert, Module 5, Lesson 2)
+
+WHAT YOU WILL BUILD
+A live camera app. Press SPACE, wait for 3-2-1, and the AI freezes a cut-out copy of you. Walk somewhere else in the
+picture: now you are there twice. Freeze more copies, then press s to save one photo with all of them.
+
+THE AI
+MODNet, a small AI model (modnet.onnx) trained on photos of people. For every pixel it answers "how much of this pixel
+is a person?" with a number from 0 to 1. That map of numbers is called a matte. It runs on your own computer.
+
+YOUR FILE
+clone_me.py. Lines marked (given) are done for you: read their notes A to H. You write TODO 1 to TODO 4, in order.
+The TODO comments explain each job in words. Run the program after each TODO and check the result.
+
+STEP 1: Run the starter (setup: see SETUP.txt)
+Press SPACE and wait for 3-2-1. The help line says "1 copies", but no copy appears, and the terminal says
+"Copy 1: you fill 0% of the picture". Why? Read cut_out().
+
+STEP 2: TODO 1, cut_out(): get the matte from the AI
+Shrink the frame, change BGR to RGB as float32, scale to -1..1, reshape to (1, 3, height, width), run the model,
+and size its answer back to the frame.
+Check: press SPACE. The terminal says "you fill" more than 0%. (The copy still does not show: that is TODO 2.)
+
+STEP 3: TODO 2, paste(): blend the person onto the scene
+Matte 1 = the person's pixel, 0 = the scene's pixel, in between = a mix.
+Check: freeze a copy and walk to the other side: your copy stays in the picture.
+
+STEP 4: TODO 3: the live you in front
+Paste the live you last, after the frozen copies.
+Check: walk in front of a copy. You pass in front of it.
+
+STEP 5: TODO 4, final_photo(): the saved photo
+Build it from the frozen copies only: the newest copy's frame, the older copies on it, and the newest you on top.
+Check: freeze 2 or 3 copies, press s, and open the clone_photo file in this folder: every copy of you is in it.
+
+STEP 6: Find what the AI cannot do
+Freeze with only a toy in view. Freeze with your hand over your face. Freeze with someone else in view.
+What happens each time, and why?
+
+KEYS
+SPACE = 3-2-1 then freeze a copy (holding it counts once)    s = save (needs 2 or more copies)
+u = undo the last copy    c = clear all copies    q or Esc = quit (or close the window)
+
+TIPS
+Keep the laptop still between copies. Sit about an arm's length from the camera. Keep your hands off your face for a
+pose. Errors appear in the terminal, not in the camera window.
+
+SHOW YOUR PARENT
+Make a photo with three of you, and say: "The AI marks every pixel as me or not me, and my code pastes the copies
+together."
